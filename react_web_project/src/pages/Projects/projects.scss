@@ -1,0 +1,80 @@
+@use '../../styles/variables' as vars;
+
+.projects-inner {
+  display: grid;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.project-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  border: 4px solid vars.$gold;
+  background: rgba(245, 241, 232, 0.12);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.12);
+  transform: perspective(800px) rotate(-0.3deg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) rotate(0deg);
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.14);
+  background: rgba(245, 241, 232, 0.16);
+}
+
+.project-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.portfolio-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: vars.$charcoal;
+}
+
+.portfolio-card__text {
+  margin: 0;
+  color: rgba(vars.$charcoal, 0.84);
+  line-height: 1.8;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border-radius: 9999px;
+  background: vars.$navy;
+  color: vars.$cream;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.project-tech {
+  display: inline-flex;
+  padding: 0.6rem 0.9rem;
+  border: 3px solid vars.$charcoal;
+  background: rgba(vars.$charcoal, 0.05);
+  border-radius: 0.85rem;
+  font-weight: 700;
+  color: vars.$charcoal;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

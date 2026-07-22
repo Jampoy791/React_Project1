@@ -1,0 +1,145 @@
+@use '../../styles/variables' as vars;
+
+.portfolio-nav {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 120rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: 800;
+    color: vars.$charcoal;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  &__mobile-toggle {
+    display: none;
+  }
+
+  &__button,
+  &__icon-button,
+  &__avatar-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    border: 3px solid vars.$navy;
+    background: vars.$cream;
+    color: vars.$navy;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  &__button:hover,
+  &__icon-button:hover,
+  &__avatar-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &__icon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__link-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    color: vars.$charcoal;
+    transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+
+  &__link-base:hover {
+    transform: translateY(-1px);
+    color: vars.$navy;
+    background: vars.$cream;
+    border-color: vars.$navy;
+  }
+
+  &__link--active {
+    color: vars.$navy;
+    background: vars.$gold;
+    border-color: vars.$navy;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &__menu {
+    position: relative;
+  }
+
+  &__dropdown {
+    position: absolute;
+    right: 0;
+    margin-top: 0.75rem;
+    width: 14rem;
+    padding: 0.5rem;
+    border: 3px solid vars.$navy;
+    background: vars.$cream;
+  }
+
+  &__dropdown-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: vars.$charcoal;
+    text-decoration: none;
+  }
+
+  &__dropdown-link:hover { background: rgba(227, 215, 175, 0.24); }
+
+  &__mobile-panel {
+    padding: 1rem 0.75rem 1.25rem;
+    display: none;
+    background: vars.$cream;
+    border-top: 3px solid vars.$navy;
+  }
+
+  &__link-base--mobile {
+    width: 100%;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 860px) {
+    &__content,
+    &__actions { display: none; }
+    &__mobile-toggle { display: block; }
+    &__mobile-panel { display: block; }
+  }
+}

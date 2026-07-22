@@ -1,0 +1,213 @@
+/* App.scss — imports variables and base utilities, then component styles */
+@use 'sass:color';
+@use './styles/variables' as vars;
+@use './styles/base';
+
+.app-shell {
+  width: min(100%, 88rem);
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+
+.portfolio-section {
+  scroll-margin-top: 6.5rem;
+}
+
+.portfolio-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(245, 241, 232, 0.96);
+  border-bottom: 4px solid vars.$gold;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+
+  &__brand { display: flex; align-items: center; }
+  &__name {
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: vars.$charcoal;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__link-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    color: vars.$charcoal;
+    transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      color: vars.$navy;
+      background: vars.$cream;
+      border-color: vars.$navy;
+    }
+  }
+
+  &__link--active {
+    color: vars.$navy;
+    background: vars.$gold;
+    border-color: vars.$navy;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  &__icon-button,
+  &__avatar-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0.75rem;
+    border: 3px solid vars.$navy;
+    background: vars.$cream;
+    color: vars.$navy;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.75rem;
+    object-fit: cover;
+    border: 3px solid vars.$navy;
+  }
+
+  &__dropdown {
+    position: absolute;
+    right: 0;
+    margin-top: 0.75rem;
+    width: 14rem;
+    padding: 0.5rem;
+    border: 3px solid vars.$navy;
+    background: vars.$cream;
+  }
+
+  &__dropdown-link {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: vars.$charcoal;
+    text-decoration: none;
+
+    &:hover { background: rgba(227, 215, 175, 0.24); }
+  }
+
+  &__mobile-panel {
+    padding: 1rem 0.75rem 1.25rem;
+    display: none;
+  }
+
+  &__link-base--mobile {
+    width: 100%;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 860px) {
+    &__content, &__actions { display: none; }
+    &__mobile-toggle { display: block; }
+    &__mobile-panel { display: block; }
+  }
+}
+
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+  padding: 4.5rem 1.25rem;
+  position: relative;
+  overflow: hidden;
+  color: vars.$cream;
+
+  &--dark { background: vars.$navy; }
+  &--accent { background: color.adjust(vars.$navy, $lightness: 10%); }
+  &--cream { background: vars.$cream; color: vars.$charcoal; }
+
+  &__inner {
+    width: min(100%, 88rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  &__title {
+    font-size: clamp(2.25rem, 4vw, 4.25rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  &__text {
+    max-width: 50rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-section { padding: 4.5rem 1rem; }
+  .portfolio-section__title { font-size: clamp(2.25rem, 8vw, 3.5rem); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

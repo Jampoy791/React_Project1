@@ -1,26 +1,30 @@
-import './hero.css'
+import './hero.scss'
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="hero-shell">
+    <section id="hero" className="hero-shell reveal">
       <div className="hero-content">
-        <div className="hero-text-block">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-indigo-400">
-            Hello, I’m
+        <div className="hero-copy">
+          <p className="hero-eyebrow">Junior Web Developer</p>
+          <h1 className="hero-title">John Paul Villanueva</h1>
+          <p className="hero-tagline">
+            Building premium neo-brutalist portfolio experiences with raw structure, sharp contrast, and polished motion.
           </p>
-          <h1 className="hero-title text-white">
-            John Paul Villanueva
-          </h1>
-          <p className="mt-6 text-lg text-gray-300">
-            I build modern web experiences with React, Tailwind, and thoughtful design.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a href="#" className="rounded-md bg-indigo-500 px-5 py-3 font-semibold text-white transition hover:bg-indigo-400">
-              Get started
+          <div className="hero-cta">
+            <a href="#projects" className="btn btn-primary">
+              View work
             </a>
-            <a href="#" className="rounded-md border border-white/20 px-5 py-3 font-semibold text-white transition hover:bg-white/10">
-              Learn more
+            <a href="#contact" className="btn btn-secondary">
+              Let’s talk
             </a>
+          </div>
+        </div>
+
+        <div className="hero-panel">
+          <div className="hero-panel__badge">Web · UI · Motion</div>
+          <div className="hero-panel__card">
+            <span className="hero-panel__label">Signature</span>
+            <p>Neo-brutalist systems for modern digital brands.</p>
           </div>
         </div>
       </div>
