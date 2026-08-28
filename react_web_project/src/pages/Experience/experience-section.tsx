@@ -2,23 +2,18 @@ import './experience.scss'
 
 const experience = [
   {
-    year: '2024',
-    title: 'Junior Web Developer',
-    company: 'Bold Launch Labs',
-    detail: 'Built high-contrast frontends and component systems for ambitious digital brands.',
+    year: '2025',
+    title: 'GHL Developer',
+    company: 'Laminar Digital Solutions',
+    detail: 'Built and shipped a responsive GoHighLevel web app (JS/CSS3) from client requirements to deployment, using Agile/Trello workflows.',
   },
   {
     year: '2023',
-    title: 'Frontend Intern',
-    company: 'Studio Hive',
-    detail: 'Delivered interactive landing experiences with responsive grid systems and motion design.',
+    title: 'I.T Trainee: Business Analyst/Developer',
+    company: 'CGI Philippines',
+    detail: 'Created landing pages that explained product value clearly across phones, tablets, and desktops.',
   },
-  {
-    year: '2022',
-    title: 'Design Systems Assistant',
-    company: 'Neon Grid',
-    detail: 'Helped create reusable UI modules and layout structures for product launch websites.',
-  },
+ 
 ]
 
 export default function ExperienceSection() {
@@ -27,9 +22,9 @@ export default function ExperienceSection() {
       <div className="portfolio-section__inner experience-inner">
         <div className="experience-copy">
           <p className="portfolio-section__eyebrow">Experience</p>
-          <h2 className="portfolio-section__title">A rugged timeline of modern frontend work.</h2>
+          <h2 className="portfolio-section__title">Experience that shaped how I build.</h2>
           <p className="portfolio-section__text">
-            From polished portfolio builds to fast product launches, each role sharpened the craft of frontend architecture and brutalist UI systems.
+            Each role strengthened my frontend foundations: building responsive pages, organizing reusable UI, and working from a clear visual system.
           </p>
         </div>
 

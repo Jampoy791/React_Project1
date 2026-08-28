@@ -1,5 +1,5 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import './Nav.scss'
 
 const navigation = [
@@ -23,7 +23,7 @@ export default function Nav() {
           <div className="portfolio-nav__inner">
             <div className="portfolio-nav__mobile-toggle">
               <DisclosureButton className="portfolio-nav__button">
-                <span className="sr-only">Open main menu</span>
+                <span className="sr-only">{open ? 'Close main menu' : 'Open main menu'}</span>
                 {open ? (
                   <XMarkIcon aria-hidden="true" className="portfolio-nav__icon" />
                 ) : (
@@ -32,11 +32,11 @@ export default function Nav() {
               </DisclosureButton>
             </div>
 
-            <div className="portfolio-nav__content">
-              <div className="portfolio-nav__brand">
-                <span className="portfolio-nav__name">John Paul Villanueva</span>
-              </div>
+            <div className="portfolio-nav__brand">
+              <span className="portfolio-nav__name">John Paul Villanueva</span>
+            </div>
 
+            <div className="portfolio-nav__content">
               <div className="portfolio-nav__links">
                 {navigation.map((item) => (
                   <a
@@ -54,35 +54,6 @@ export default function Nav() {
               </div>
             </div>
 
-            <div className="portfolio-nav__actions">
-              <button type="button" className="portfolio-nav__icon-button">
-                <span className="sr-only">View notifications</span>
-                <BellIcon aria-hidden="true" className="portfolio-nav__icon" />
-              </button>
-
-              <Menu as="div" className="portfolio-nav__menu">
-                <MenuButton className="portfolio-nav__avatar-button">
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    alt="Profile avatar"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    className="portfolio-nav__avatar"
-                  />
-                </MenuButton>
-
-                <MenuItems transition className="portfolio-nav__dropdown">
-                  <MenuItem>
-                    <a href="#" className="portfolio-nav__dropdown-link">Profile</a>
-                  </MenuItem>
-                  <MenuItem>
-                    <a href="#" className="portfolio-nav__dropdown-link">Settings</a>
-                  </MenuItem>
-                  <MenuItem>
-                    <a href="#" className="portfolio-nav__dropdown-link">Sign out</a>
-                  </MenuItem>
-                </MenuItems>
-              </Menu>
-            </div>
           </div>
 
           <DisclosurePanel className="portfolio-nav__mobile-panel">

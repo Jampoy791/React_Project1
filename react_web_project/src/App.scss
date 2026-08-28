@@ -1,12 +1,11 @@
 /* App.scss — imports variables and base utilities, then component styles */
-@use 'sass:color';
 @use './styles/variables' as vars;
 @use './styles/base';
 
 .app-shell {
-  width: min(100%, 88rem);
+  width: min(100%, 96rem);
   margin: 0 auto;
-  padding: 0 1.25rem 3rem;
+  padding: 0 clamp(1rem, 3vw, 3rem) 3rem;
 }
 
 .portfolio-section {
@@ -17,9 +16,9 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(245, 241, 232, 0.96);
-  border-bottom: 4px solid vars.$gold;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
+  background: rgba(vars.$cream, 0.96);
+  border-bottom: 3px solid vars.$charcoal;
+  box-shadow: 0 5px 0 vars.$vermilion;
 
   &__inner {
     display: flex;
@@ -28,14 +27,14 @@
     gap: 1rem;
     max-width: 120rem;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 0.85rem 0;
   }
 
   &__brand { display: flex; align-items: center; }
   &__name {
     font-weight: 800;
-    font-size: 0.95rem;
-    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: vars.$charcoal;
   }
@@ -43,17 +42,17 @@
   &__links {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.35rem;
   }
 
   &__link-base {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.75rem 1rem;
-    border: 3px solid transparent;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 0.65rem 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 0;
+    font-size: 0.72rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -73,62 +72,7 @@
     color: vars.$navy;
     background: vars.$gold;
     border-color: vars.$navy;
-    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
-  }
-
-  &__actions {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-  }
-
-  &__icon-button,
-  &__avatar-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    border-radius: 0.75rem;
-    border: 3px solid vars.$navy;
-    background: vars.$cream;
-    color: vars.$navy;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
-    }
-  }
-
-  &__avatar {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 0.75rem;
-    object-fit: cover;
-    border: 3px solid vars.$navy;
-  }
-
-  &__dropdown {
-    position: absolute;
-    right: 0;
-    margin-top: 0.75rem;
-    width: 14rem;
-    padding: 0.5rem;
-    border: 3px solid vars.$navy;
-    background: vars.$cream;
-  }
-
-  &__dropdown-link {
-    display: block;
-    padding: 0.75rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    color: vars.$charcoal;
-    text-decoration: none;
-
-    &:hover { background: rgba(227, 215, 175, 0.24); }
+    box-shadow: 4px 4px 0 vars.$vermilion;
   }
 
   &__mobile-panel {
@@ -143,7 +87,7 @@
   }
 
   @media (max-width: 860px) {
-    &__content, &__actions { display: none; }
+    &__content { display: none; }
     &__mobile-toggle { display: block; }
     &__mobile-panel { display: block; }
   }
@@ -152,13 +96,13 @@
 .portfolio-section {
   display: flex;
   justify-content: center;
-  padding: 4.5rem 1.25rem;
+  padding: clamp(5rem, 11vw, 10rem) 1.25rem;
   position: relative;
   overflow: hidden;
   color: vars.$cream;
 
   &--dark { background: vars.$navy; }
-  &--accent { background: color.adjust(vars.$navy, $lightness: 10%); }
+  &--accent { background: vars.$vermilion; color: vars.$cream; }
   &--cream { background: vars.$cream; color: vars.$charcoal; }
 
   &__inner {
@@ -167,36 +111,36 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   &__eyebrow {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     font-size: 0.85rem;
     font-weight: 800;
     letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: var(--color-gold);
+    color: vars.$vermilion;
   }
 
   &__title {
-    font-size: clamp(2.25rem, 4vw, 4.25rem);
+    max-width: 16ch;
+    font-size: clamp(2.5rem, 6vw, 6.5rem);
     font-weight: 900;
-    line-height: 0.95;
+    line-height: 0.9;
     letter-spacing: -0.05em;
   }
 
   &__text {
-    max-width: 50rem;
-    margin: 0 auto;
+    max-width: 42rem;
+    margin: 0;
     font-size: 1rem;
     line-height: 1.75;
   }
 }
 
 @media (max-width: 768px) {
-  .portfolio-section { padding: 4.5rem 1rem; }
-  .portfolio-section__title { font-size: clamp(2.25rem, 8vw, 3.5rem); }
+  .portfolio-section { padding: 5rem 1rem; }
 }
 
 .reveal {

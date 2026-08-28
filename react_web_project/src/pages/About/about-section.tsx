@@ -6,34 +6,34 @@ export default function AboutSection() {
       <div className="portfolio-section__inner about-inner">
         <div className="about-copy">
           <p className="portfolio-section__eyebrow">About</p>
-          <h2 className="portfolio-section__title">I craft bold web experiences with precision and attitude.</h2>
+          <h2 className="portfolio-section__title">I turn complex ideas into clear, usable interfaces.</h2>
           <p className="portfolio-section__text">
-            I merge raw brutalist structure with sophisticated polish to build digital products that feel modern, premium, and purpose-built for portfolios and client-facing interfaces.
+            I work with teams and independent creators to shape responsive websites that are easy to use, easy to maintain, and ready to grow.
           </p>
         </div>
 
         <div className="about-profile-card nb-card">
           <div className="about-profile-image" />
           <div className="about-profile-copy">
-            <span className="profile-label">Profile</span>
+            <span className="profile-label">What I bring</span>
             <p>
-              Experienced in React, TypeScript, HTML5, CSS, and motion-driven interfaces. I deliver a sharp visual identity across every page with bold typography, exposed grids, and tactile interactions.
+              I combine React, TypeScript, HTML, CSS, and motion to create interfaces that feel considered on every screen size. I care about clear hierarchy, accessible interactions, and details that support the content.
             </p>
           </div>
         </div>
 
         <div className="about-grid">
           <article className="about-card nb-card">
-            <h3>Brand systems</h3>
-            <p>Chunky layouts, standout blocks, and intentional asymmetry for memorable product pages.</p>
+            <h3>Clear visual direction</h3>
+            <p>Layouts and type choices that make a product easier to recognize, scan, and remember.</p>
           </article>
           <article className="about-card nb-card">
-            <h3>Component design</h3>
-            <p>Reusable UI with bold borders, clear states, and interactive polish that elevate every interface.</p>
+            <h3>Reusable interfaces</h3>
+            <p>Flexible components with consistent spacing, clear states, and responsive behavior.</p>
           </article>
           <article className="about-card nb-card">
-            <h3>Motion & interaction</h3>
-            <p>Hover shifts, reveal animations, and micro-interactions that keep attention without overwhelming the experience.</p>
+            <h3>Thoughtful interaction</h3>
+            <p>Motion and feedback that help people understand what changed without slowing them down.</p>
           </article>
         </div>
       </div>

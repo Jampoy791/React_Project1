@@ -3,21 +3,21 @@ import './projects.scss'
 const projects = [
   {
     title: 'Portfolio Website',
-    description: 'A sharp, polished portfolio interface built with React and modern CSS patterns.',
-    badge: 'Featured',
-    tech: 'React · TypeScript · CSS',
+    description: 'A personal portfolio that presents the work, skills, and contact path in one focused experience.',
+    badge: 'Featured build',
+    tech: 'React, TypeScript, CSS',
   },
   {
     title: 'E-commerce UI',
-    description: 'A streamlined product experience with clear cards, bold typography, and visual rhythm.',
-    badge: 'Production',
-    tech: 'React · Vite · Tailwind',
+    description: 'A storefront concept that helps shoppers compare products, understand details, and check out with less friction.',
+    badge: 'Storefront concept',
+    tech: 'React, Vite, Tailwind',
   },
   {
     title: 'Design system',
-    description: 'A reusable UI library with clean components, consistent spacing, and strong visual contrast.',
-    badge: 'System',
-    tech: 'Figma · Component Library · Tokens',
+    description: 'A shared set of components and design rules that keeps product pages consistent as they grow.',
+    badge: 'Reusable system',
+    tech: 'Figma, components, design tokens',
   },
 ]
 
@@ -26,7 +26,7 @@ export default function ProjectsSection() {
     <section id="projects" className="portfolio-section portfolio-section--cream reveal">
       <div className="portfolio-section__inner projects-inner">
         <p className="portfolio-section__eyebrow">Projects</p>
-        <h2 className="portfolio-section__title">Selected work built for premium digital impact.</h2>
+        <h2 className="portfolio-section__title">A few interfaces I have designed and built.</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <article key={project.title} className="project-card nb-card">

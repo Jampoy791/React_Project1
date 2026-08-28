@@ -1,10 +1,12 @@
 /* Design tokens — neo-brutalist palette */
-$navy: #1B2A4A;
-$gold: #D4B896;
-$cream: #F5F1E8;
-$charcoal: #2A2A2A;
-$soft-grey: #B9B1A6;
-$muted: #8A8680;
+$navy: #17211f;
+$gold: #d9ef61;
+$cream: #f2ead8;
+$charcoal: #242321;
+$soft-grey: #b8b09f;
+$muted: #756f64;
+$vermilion: #e24a2b;
+$blue: #3157d5;
 
 :root {
   --color-navy: #{$navy};
@@ -12,13 +14,15 @@ $muted: #8A8680;
   --color-cream: #{$cream};
   --color-charcoal: #{$charcoal};
   --color-soft: #{$soft-grey};
+  --color-vermilion: #{$vermilion};
+  --color-blue: #{$blue};
 
   --bg: var(--color-cream);
   --text: var(--color-charcoal);
-  --muted: rgba(42, 42, 42, 0.68);
-  --border: rgba(42, 42, 42, 0.18);
-  --shadow: 10px 10px 0 rgba(0, 0, 0, 0.16);
-  --accent-border: rgba(212, 184, 150, 0.45);
+  --muted: rgba(36, 35, 33, 0.68);
+  --border: rgba(36, 35, 33, 0.18);
+  --shadow: 10px 10px 0 #{$vermilion};
+  --accent-border: rgba(226, 74, 43, 0.45);
 }
 
 /* Spacing and typography tokens */

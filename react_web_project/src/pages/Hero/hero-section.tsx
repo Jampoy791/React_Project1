@@ -5,26 +5,30 @@ export default function HeroSection() {
     <section id="hero" className="hero-shell reveal">
       <div className="hero-content">
         <div className="hero-copy">
-          <p className="hero-eyebrow">Junior Web Developer</p>
+          <p className="hero-eyebrow">Frontend developer</p>
           <h1 className="hero-title">John Paul Villanueva</h1>
           <p className="hero-tagline">
-            Building premium neo-brutalist portfolio experiences with raw structure, sharp contrast, and polished motion.
+            Entry-level Web Developer with hands-on experience building responsive, scalable web applications using 
+            Angular, TypeScript, JavaScript, PHP, HTML5, and Node.js. Skilled in RESTful API integration, Git 
+            version control, and Agile workflows, with a track record of collaborating across development teams to 
+            deliver quality code on time. Eager to bring strong problem-solving skills and a passion for clean, 
+            maintainable code to a growing engineering team. 
           </p>
           <div className="hero-cta">
             <a href="#projects" className="btn btn-primary">
-              View work
+              See selected work
             </a>
             <a href="#contact" className="btn btn-secondary">
-              Let’s talk
+              Start a conversation
             </a>
           </div>
         </div>
 
         <div className="hero-panel">
-          <div className="hero-panel__badge">Web · UI · Motion</div>
+          <div className="hero-panel__badge">Web / UI / Motion</div>
           <div className="hero-panel__card">
-            <span className="hero-panel__label">Signature</span>
-            <p>Neo-brutalist systems for modern digital brands.</p>
+            <span className="hero-panel__label">What I make</span>
+            <p>Clear, responsive interfaces for portfolios, products, and growing brands.</p>
           </div>
         </div>
       </div>

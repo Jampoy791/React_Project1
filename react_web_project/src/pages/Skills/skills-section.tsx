@@ -18,9 +18,9 @@ export default function SkillsSection() {
     <section id="skills" className="portfolio-section portfolio-section--cream reveal">
       <div className="portfolio-section__inner skills-inner">
         <p className="portfolio-section__eyebrow">Skills</p>
-        <h2 className="portfolio-section__title">Bold skills for modern product experiences.</h2>
+        <h2 className="portfolio-section__title">Tools I use to build and ship.</h2>
         <p className="portfolio-section__text">
-          A tech stack built for polished frontend execution, adaptive interfaces, and immersive digital systems.
+          I use these tools to build responsive interfaces, reusable components, and polished web experiences.
         </p>
 
         <div className="skills-grid">

@@ -51,4 +51,17 @@
   .contact-inner {
     grid-template-columns: 1fr;
   }
+
+  .portfolio-contact-card {
+    padding: 1.25rem;
+  }
+
+  .contact-card-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-card-actions .btn {
+    flex: 1 1 100%;
+  }
 }
