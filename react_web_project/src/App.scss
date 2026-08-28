@@ -1,0 +1,157 @@
+/* App.scss — imports variables and base utilities, then component styles */
+@use './styles/variables' as vars;
+@use './styles/base';
+
+.app-shell {
+  width: min(100%, 96rem);
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3vw, 3rem) 3rem;
+}
+
+.portfolio-section {
+  scroll-margin-top: 6.5rem;
+}
+
+.portfolio-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(vars.$cream, 0.96);
+  border-bottom: 3px solid vars.$charcoal;
+  box-shadow: 0 5px 0 vars.$vermilion;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0.85rem 0;
+  }
+
+  &__brand { display: flex; align-items: center; }
+  &__name {
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: vars.$charcoal;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  &__link-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    color: vars.$charcoal;
+    transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      color: vars.$navy;
+      background: vars.$cream;
+      border-color: vars.$navy;
+    }
+  }
+
+  &__link--active {
+    color: vars.$navy;
+    background: vars.$gold;
+    border-color: vars.$navy;
+    box-shadow: 4px 4px 0 vars.$vermilion;
+  }
+
+  &__mobile-panel {
+    padding: 1rem 0.75rem 1.25rem;
+    display: none;
+  }
+
+  &__link-base--mobile {
+    width: 100%;
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 860px) {
+    &__content { display: none; }
+    &__mobile-toggle { display: block; }
+    &__mobile-panel { display: block; }
+  }
+}
+
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+  padding: clamp(5rem, 11vw, 10rem) 1.25rem;
+  position: relative;
+  overflow: hidden;
+  color: vars.$cream;
+
+  &--dark { background: vars.$navy; }
+  &--accent { background: vars.$vermilion; color: vars.$cream; }
+  &--cream { background: vars.$cream; color: vars.$charcoal; }
+
+  &__inner {
+    width: min(100%, 88rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+  }
+
+  &__eyebrow {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: vars.$vermilion;
+  }
+
+  &__title {
+    max-width: 16ch;
+    font-size: clamp(2.5rem, 6vw, 6.5rem);
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -0.05em;
+  }
+
+  &__text {
+    max-width: 42rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-section { padding: 5rem 1rem; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

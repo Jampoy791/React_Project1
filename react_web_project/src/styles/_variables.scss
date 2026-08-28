@@ -1,0 +1,35 @@
+/* Design tokens — neo-brutalist palette */
+$navy: #17211f;
+$gold: #d9ef61;
+$cream: #f2ead8;
+$charcoal: #242321;
+$soft-grey: #b8b09f;
+$muted: #756f64;
+$vermilion: #e24a2b;
+$blue: #3157d5;
+
+:root {
+  --color-navy: #{$navy};
+  --color-gold: #{$gold};
+  --color-cream: #{$cream};
+  --color-charcoal: #{$charcoal};
+  --color-soft: #{$soft-grey};
+  --color-vermilion: #{$vermilion};
+  --color-blue: #{$blue};
+
+  --bg: var(--color-cream);
+  --text: var(--color-charcoal);
+  --muted: rgba(36, 35, 33, 0.68);
+  --border: rgba(36, 35, 33, 0.18);
+  --shadow: 10px 10px 0 #{$vermilion};
+  --accent-border: rgba(226, 74, 43, 0.45);
+}
+
+/* Spacing and typography tokens */
+$space-xs: 0.5rem;
+$space-sm: 1rem;
+$space-md: 1.5rem;
+$space-lg: 2.5rem;
+$radius-sm: 0.75rem;
+$radius-md: 1.5rem;
+$radius-lg: 2rem;

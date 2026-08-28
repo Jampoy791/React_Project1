@@ -1,0 +1,66 @@
+@use 'variables' as vars;
+
+/* Basic reset and base styles */
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  background-color: vars.$cream;
+  background-image: linear-gradient(rgba(vars.$charcoal, 0.08) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(vars.$charcoal, 0.08) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+
+button { font: inherit; cursor: pointer; }
+
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Neo‑brutalist helpers */
+.nb-card {
+  padding: 1.5rem;
+  border: 4px solid vars.$gold;
+  background: vars.$cream;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.nb-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.14);
+  background: vars.$gold;
+}
+
+.nb-hero-title {
+  font-size: clamp(3rem, 5vw, 5.25rem);
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: vars.$cream;
+  text-transform: uppercase;
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.85rem;
+  border: 4px solid vars.$gold;
+  background: vars.$gold;
+  color: vars.$charcoal;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}

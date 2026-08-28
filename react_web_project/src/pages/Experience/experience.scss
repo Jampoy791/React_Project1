@@ -1,0 +1,65 @@
+@use '../../styles/variables' as vars;
+
+.experience-inner {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+.timeline-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  border: 3px solid vars.$cream;
+  background: vars.$cream;
+  color: vars.$charcoal;
+  box-shadow: 8px 8px 0 vars.$vermilion;
+  position: relative;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 3px solid vars.$vermilion;
+  background: vars.$gold;
+}
+
+.timeline-year {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: vars.$navy;
+}
+
+.timeline-company {
+  margin: 0.25rem 0;
+  font-weight: 700;
+  color: vars.$navy;
+}
+
+.timeline-card h3 {
+  margin: 0;
+}
+
+.timeline-card p {
+  margin: 0;
+  line-height: 1.8;
+}
+
+@media (max-width: 1100px) {
+  .timeline-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .timeline-grid { grid-template-columns: 1fr; }
+}

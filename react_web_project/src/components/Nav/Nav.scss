@@ -1,0 +1,125 @@
+@use '../../styles/variables' as vars;
+
+.portfolio-nav {
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(0.75rem, 2vw, 2rem);
+    max-width: 96rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.85rem 0;
+    padding-left: clamp(1rem, 3vw, 3rem);
+    padding-right: clamp(1rem, 3vw, 3rem);
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: 800;
+    color: vars.$charcoal;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__mobile-toggle {
+    display: none;
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 0;
+    border: 3px solid vars.$charcoal;
+    background: vars.$cream;
+    color: vars.$navy;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  &__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  &__icon {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+  }
+
+  &__link-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 0.75rem;
+    border: 2px solid transparent;
+    border-radius: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-decoration: none;
+    color: vars.$charcoal;
+    transition: transform 0.2s ease, color 0.2s ease, background 0.2s ease;
+  }
+
+  &__link-base:hover {
+    transform: translateY(-1px);
+    color: vars.$navy;
+    background: vars.$cream;
+    border-color: vars.$navy;
+  }
+
+  &__link--active {
+    color: vars.$navy;
+    background: vars.$gold;
+    border-color: vars.$navy;
+    box-shadow: 4px 4px 0 vars.$vermilion;
+  }
+
+  &__mobile-panel {
+    padding: 0.75rem clamp(1rem, 3vw, 3rem) 1rem;
+    display: none;
+    background: vars.$cream;
+    border-top: 3px solid vars.$charcoal;
+  }
+
+  &__link-base--mobile {
+    width: 100%;
+    display: block;
+    margin-top: 0.35rem;
+    padding: 0.8rem 0.75rem;
+  }
+
+  @media (max-width: 860px) {
+    &__content { display: none; }
+    &__mobile-toggle { display: block; }
+    &__mobile-panel { display: block; }
+    &__inner { padding: 0.75rem 0; }
+  }
+
+  @media (min-width: 861px) {
+    &__mobile-toggle { display: none; }
+    &__content { flex: 1; }
+  }
+
+  @media (max-width: 420px) {
+    &__name { max-width: 13ch; white-space: normal; line-height: 1.1; }
+  }
+}
