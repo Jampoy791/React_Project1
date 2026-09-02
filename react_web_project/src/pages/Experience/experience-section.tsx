@@ -11,7 +11,7 @@ const experience = [
     year: '2023',
     title: 'I.T Trainee: Business Analyst/Developer',
     company: 'CGI Philippines',
-    detail: 'Created landing pages that explained product value clearly across phones, tablets, and desktops.',
+    detail: 'Developed a custom web solution for the RPA development team, using Angular, Node.js, Typescript and MySQL. Collaborated with cross-functional teams to gather requirements and implement features.',
   },
  
 ]
