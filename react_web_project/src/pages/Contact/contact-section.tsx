@@ -19,7 +19,9 @@ export default function ContactSection() {
           </div>
           <div className="contact-card-row">
             <span>LinkedIn</span>
-            <a href="https://www.linkedin.com/in/jpaulvillanueva/">linkedin.com/in/jpaulvillanueva</a>
+            <a href="https://www.linkedin.com/in/jpaulvillanueva/" target="_blank" rel="noreferrer">
+              John Paul Villanueva
+            </a>
           </div>
           <div className="contact-card-actions">
             <a href="mailto:jaypeeeev@gmail.com" className="btn btn-primary">Send an email</a>

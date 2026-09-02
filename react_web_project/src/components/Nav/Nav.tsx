@@ -1,14 +1,15 @@
+import { useEffect, useState } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import './Nav.scss'
 
 const navigation = [
-  { name: 'Home', href: '#hero', current: true },
-  { name: 'About', href: '#about', current: false },
-  { name: 'Skills', href: '#skills', current: false },
-  { name: 'Projects', href: '#projects', current: false },
-  { name: 'Experience', href: '#experience', current: false },
-  { name: 'Contact', href: '#contact', current: false },
+  { name: 'Home', href: '#hero' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 function classNames(...classes: Array<string | false | null | undefined>): string {
@@ -16,6 +17,44 @@ function classNames(...classes: Array<string | false | null | undefined>): strin
 }
 
 export default function Nav() {
+  const [activeSection, setActiveSection] = useState('hero')
+
+  useEffect(() => {
+    const sectionIds = navigation.map((item) => item.href.replace('#', ''))
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null)
+
+    if (sections.length === 0) {
+      return undefined
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0]
+
+        if (visibleEntry) {
+          setActiveSection(visibleEntry.target.id)
+        }
+      },
+      {
+        root: null,
+        threshold: [0.2, 0.4, 0.6, 0.8],
+        rootMargin: '-10% 0px -45% 0px',
+      },
+    )
+
+    sections.forEach((section) => observer.observe(section))
+
+    return () => observer.disconnect()
+  }, [])
+
+  const handleNavClick = (href: string) => {
+    setActiveSection(href.replace('#', ''))
+  }
+
   return (
     <Disclosure as="nav" className="portfolio-nav">
       {({ open }) => (
@@ -38,39 +77,48 @@ export default function Nav() {
 
             <div className="portfolio-nav__content">
               <div className="portfolio-nav__links">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.current ? 'portfolio-nav__link portfolio-nav__link--active' : 'portfolio-nav__link',
-                      'portfolio-nav__link-base',
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                {navigation.map((item) => {
+                  const isActive = activeSection === item.href.replace('#', '')
+
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => handleNavClick(item.href)}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={classNames(
+                        isActive ? 'portfolio-nav__link portfolio-nav__link--active' : 'portfolio-nav__link',
+                        'portfolio-nav__link-base',
+                      )}
+                    >
+                      {item.name}
+                    </a>
+                  )
+                })}
               </div>
             </div>
-
           </div>
 
           <DisclosurePanel className="portfolio-nav__mobile-panel">
-            {navigation.map((item) => (
-              <DisclosureButton
-                key={item.name}
-                as="a"
-                href={item.href}
-                aria-current={item.current ? 'page' : undefined}
-                className={classNames(
-                  item.current ? 'portfolio-nav__link portfolio-nav__link--active' : 'portfolio-nav__link',
-                  'portfolio-nav__link-base portfolio-nav__link-base--mobile',
-                )}
-              >
-                {item.name}
-              </DisclosureButton>
-            ))}
+            {navigation.map((item) => {
+              const isActive = activeSection === item.href.replace('#', '')
+
+              return (
+                <DisclosureButton
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  onClick={() => handleNavClick(item.href)}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={classNames(
+                    isActive ? 'portfolio-nav__link portfolio-nav__link--active' : 'portfolio-nav__link',
+                    'portfolio-nav__link-base portfolio-nav__link-base--mobile',
+                  )}
+                >
+                  {item.name}
+                </DisclosureButton>
+              )
+            })}
           </DisclosurePanel>
         </>
       )}

@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section id="hero" className="hero-shell reveal">
       <div className="hero-content">
         <div className="hero-copy">
-          <p className="hero-eyebrow">Frontend developer</p>
+          <p className="hero-eyebrow">Junior Web Developer</p>
           <h1 className="hero-title">John Paul Villanueva</h1>
           <p className="hero-tagline">
             Entry-level Web Developer with hands-on experience building responsive, scalable web applications using 
@@ -25,10 +25,10 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-panel">
-          <div className="hero-panel__badge">Web / UI / Motion</div>
+          <div className="hero-panel__badge">Entry-level Web Developer</div>
           <div className="hero-panel__card">
             <span className="hero-panel__label">What I make</span>
-            <p>Clear, responsive interfaces for portfolios, products, and growing brands.</p>
+            <p>I make Custom web solutions for clients who want to establish or enhance their online presence.</p>
           </div>
         </div>
       </div>
